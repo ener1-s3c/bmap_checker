@@ -9,9 +9,16 @@ Baidu Maps is a desktop and mobile web mapping service application and technolog
 ## How to use this script
 - Edit script & input your api key on line 4
 - python3 bmap.py
-- If it works, it will return disneyland detail :
+- If Api Key valid, it will return address detail :
   
   ![image](https://github.com/ener1-s3c/bmap_checker/assets/29269177/08fccd95-bace-4a20-99ba-20924875f9cb)
+
+- If Api Key not valid, it will return response :
+
+{
+   "status": 200,
+   "message": "APP不存在，AK有误请检查再重试"
+}
 
 Credit Photo :
 - pio.pii
