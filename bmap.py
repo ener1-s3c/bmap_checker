@@ -23,8 +23,12 @@ response = requests.get(base_url, params=params)
 
 # Check if the request was successful
 if response.status_code == 200:
-    data = response.json()  # Parse the JSON response
-    result = data['result']  # Extract the result
-    print(result)
+    try:
+        data = response.json()  # Parse the JSON response
+        result = data['result']  # Extract the result
+        print(result)
+    except KeyError:
+        result = data['message'] # validate success response but no result on json
+        print("Request success but no result :", result)
 else:
     print("Request failed with status code:", response.status_code)
